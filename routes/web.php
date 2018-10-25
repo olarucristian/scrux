@@ -15,3 +15,7 @@ Route::get('/', function () {
     $tasks = DB::table('tasks')->get();
     return view('welcome', compact('tasks'));
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
