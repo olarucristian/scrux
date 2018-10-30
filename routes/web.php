@@ -11,11 +11,24 @@
 |
 */
 
-Route::get('/', function () {
+/*Route::get('/', function () {
     $tasks = DB::table('tasks')->get();
     return view('welcome', compact('tasks'));
 });
-
+*/
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('send', 'MailController@send');
+
+
+/*
+Route::get('/users/{id}/{name}', function($id, $name){
+    return 'This is user ' .$name.' with an id of ' .$id;
+});
+*/
+
+Route::get('/', 'PagesController@index');
+Route::get('/about', 'PagesController@about');
+Route::get('/services', 'PagesController@services');
