@@ -1,14 +1,13 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>{{config('app.name', 'LSAPP')}}</title>
-</head>
-<body>
-<h1>Services </h1>
-<p>This is the services page</p>
-</body>
-</html>
+@extends('layouts.app')
+
+    @section('content')
+    <h1>{{$title}} </h1>
+    <ul>
+    @if(count($services) > 0)
+        <ul class="list-group"></ul>
+        @foreach($services as $service)
+            <li class="list-group-item">{{$service}}</li>
+    @endforeach
+    </ul>
+   @endif
+@endsection
